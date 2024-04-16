@@ -53,14 +53,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     double pageIndex = _currPageValue.floor().toDouble();
     double nextPageIndex = pageIndex + 1;
 
-    if (index == pageIndex) {
-      double currScale = 1 - (_currPageValue - pageIndex) * (1 - _scaleFactor);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-    } else if (index == nextPageIndex) {
-      double currScale =
-          _scaleFactor + (pageIndex + 1 - _currPageValue) * (1 - _scaleFactor);
-      matrix = Matrix4.diagonal3Values(1, currScale, 1);
-    }
+    // if (index == pageIndex) {
+    //   double currScale = 1 - (_currPageValue - pageIndex) * (1 - _scaleFactor);
+    //   matrix = Matrix4.diagonal3Values(1, currScale, 1);
+    // } else if (index == nextPageIndex) {
+    //   double currScale =
+    //       _scaleFactor + (pageIndex + 1 - _currPageValue) * (1 - _scaleFactor);
+    //   matrix = Matrix4.diagonal3Values(1, currScale, 1);
+    // }
     return Transform(
       transform: matrix,
       child: Stack(
@@ -129,6 +129,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       height: 20,
                     ),
                     Row(
+                      
                       children: [
                         IconAndTextWidget(
                             icon: Icons.circle_sharp,
